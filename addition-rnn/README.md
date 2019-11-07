@@ -1,4 +1,4 @@
-# TensorFlow.js Example: Addition RNN
+# TensorFlow.js Example: Subtraction RNN
 
 This example uses an RNN: to compute a two integer difference; but it does
 string => string translation. Although it is not the best two integer subtraction computed, it is a working example.
