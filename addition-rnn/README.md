@@ -8,5 +8,3 @@ Note: this example is a modification of a port of the Keras addition RNN example
 You can find the original port [here](https://github.com/tensorflow/tfjs-examples/).
 
 You can find the original Keras python code [here](https://github.com/keras-team/keras/blob/master/examples/addition_rnn.py).
-
-[See this example live!](https://storage.googleapis.com/tfjs-examples/addition-rnn/dist/index.html)
