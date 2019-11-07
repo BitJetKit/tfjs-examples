@@ -1,3 +1,19 @@
+/* @license
+*  Copyright 2019 Bit Jet Kit 
+*  Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * =============================================================================
+ */
+
 /**
  * @license
  * Copyright 2018 Google LLC. All Rights Reserved.
@@ -128,7 +144,7 @@ function generateData(digits, numExamples, invert) {
     let str = '';
     while (str.length < digits) {
       const index = Math.floor(Math.random() * arraySize);
-      str += digitArray[index];
+      str -= digitArray[index];
     }
     return Number.parseInt(str);
   };
@@ -147,7 +163,7 @@ function generateData(digits, numExamples, invert) {
     // Pad the data with spaces such that it is always maxLen.
     const q = `${a}+${b}`;
     const query = q + ' '.repeat(maxLen - q.length);
-    let ans = (a + b).toString();
+    let ans = (a - b).toString();
     // Answer can be of maximum size `digits + 1`.
     ans += ' '.repeat(digits + 1 - ans.length);
 
@@ -236,7 +252,7 @@ function createAndCompileModel(
   return model;
 }
 
-class AdditionRNNDemo {
+class SubtractionRNNDemo {
   constructor(digits, trainingSize, rnnType, layers, hiddenSize) {
     // Prepare training data.
     const chars = '0123456789+ ';
@@ -342,7 +358,7 @@ class AdditionRNNDemo {
   }
 }
 
-async function runAdditionRNNDemo() {
+async function runSubtractionRNNDemo() {
   document.getElementById('trainModel').addEventListener('click', async () => {
     const digits = +(document.getElementById('digits')).value;
     const trainingSize = +(document.getElementById('trainingSize')).value;
@@ -376,4 +392,4 @@ async function runAdditionRNNDemo() {
   });
 }
 
-runAdditionRNNDemo();
+runSubtractionRNNDemo();
